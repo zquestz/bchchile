@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  labels:
+    service: bchchile
+  name: bchchile
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      service: bchchile
+  template:
+    metadata:
+      labels:
+        service: bchchile
+    spec:
+      containers:
+      - image: zquestz/bchchile:latest
+        imagePullPolicy: Always
+        name: bchchile
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "16Mi"
+      restartPolicy: Always

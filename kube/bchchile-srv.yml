@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bchchile
+  namespace: default
+spec:
+  ports:
+    - port: 90
+      targetPort: 80
+  selector:
+    service: bchchile
+  type: NodePort
