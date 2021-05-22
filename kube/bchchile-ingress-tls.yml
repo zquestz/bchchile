@@ -16,7 +16,7 @@ spec:
     secretName: bchchile-tls
   backend:
     serviceName: bchchile
-    servicePort: 90
+    servicePort: 142
   rules:
   - host: bchchile.com
     http:
@@ -24,25 +24,25 @@ spec:
       - path: /
         backend:
           serviceName: bchchile
-          servicePort: 90
+          servicePort: 142
   - host: www.bchchile.com
     http:
       paths:
       - path: /
         backend:
           serviceName: bchchile
-          servicePort: 90
+          servicePort: 142
   - host: bchchile.cl
     http:
       paths:
       - path: /
         backend:
           serviceName: bchchile
-          servicePort: 90
+          servicePort: 142
   - host: www.bchchile.cl
     http:
       paths:
       - path: /
         backend:
           serviceName: bchchile
-          servicePort: 90
+          servicePort: 142

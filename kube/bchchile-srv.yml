@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   ports:
-    - port: 90
+    - port: 142
       targetPort: 80
   selector:
     service: bchchile
