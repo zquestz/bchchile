@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: bchchile-ingress
@@ -14,35 +14,49 @@ spec:
     - www.bchchile.cl
     - bchchile.cl
     secretName: bchchile-tls
-  backend:
-    serviceName: bchchile
-    servicePort: 142
+  defaultBackend:
+    service:
+      name: bchchile
+      port:
+        number: 142
   rules:
   - host: bchchile.com
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: bchchile
-          servicePort: 142
+          service:
+            name: bchchile
+            port:
+              number: 142
   - host: www.bchchile.com
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: bchchile
-          servicePort: 142
+          service:
+            name: bchchile
+            port:
+              number: 142
   - host: bchchile.cl
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: bchchile
-          servicePort: 142
+          service:
+            name: bchchile
+            port:
+              number: 142
   - host: www.bchchile.cl
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: bchchile
-          servicePort: 142
+          service:
+            name: bchchile
+            port:
+              number: 142
